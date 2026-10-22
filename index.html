@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WORDLY DICTIONARY</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <header class="site-header">
+    <h1 class="logo">Wordly</h1>
+    <button id="theme-toggle" class="btn btn-outline" type="button"
+            aria-label="Switch between light and dark theme" aria-pressed="false">
+      Dark mode
+    </button>
+  </header>
+
+  <main class="container">
+    <!-- Search form -->
+    <form id="search-form" class="search-form" role="search" novalidate>
+      <label for="search-input" class="visually-hidden">Search for a word</label>
+      <input id="search-input" name="word" type="text" autocomplete="off"
+             placeholder="Type a word, e.g. harbor" maxlength="50"
+             aria-describedby="search-hint" required>
+      <button id="search-btn" class="btn btn-blue" type="submit">Search</button>
+    </form>
+    <p id="search-hint" class="hint">Letters, hyphens and apostrophes only.</p>
+
+    <!-- Words the user has saved -->
+       <section class="saved" aria-labelledby="saved-title">
+      <h2 id="saved-title" class="section-title">Saved words</h2>
+      <ul id="saved-list" class="chip-list"></ul>
+      <p id="saved-empty" class="hint">Nothing saved yet. Search a word and press Save.</p>
+    </section>
+
+    <!-- Results, loading messages and errors all appear here -->
+    <section id="results" class="results" aria-live="polite" aria-busy="false">
+      <p class="hint">Search for a word to see its pronunciation, definitions and synonyms.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Definitions come from the Free Dictionary API.</p>
+  </footer>
+
+  <script src="src/index.js"></script>
+
+</body>
+</html>
